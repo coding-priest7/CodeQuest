@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Code Quest</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/style.css')}}"
+    />
+    <script
+      type="text/javascript"
+      src="{{url_for('static',filename='js/script.js')}}"
+    >
+      // alert("This page has been loaded !");
+    </script>
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo"><span>Code Quest</span></a>
+    </header>
+    <div class="container">
+      <div class="search-box">
+        <i class="bx bx-search"></i>
+        <form method="POST">
+          {{ form.hidden_tag() }}
+          <!-- <label for="search" >Key words:</label> -->
+          <!-- <span class="form-label">Key words:</span> -->
+          <input type="text" placeholder="search" name="search" />
+          </div>
+          <!-- {{ form.search() }} {{ form.submit() }} -->
+          <!-- {{ form.submit() }} -->
+        </form>
+      </div>
+
+      <div class="images">
+        {% for result in results %}
+        <div class="image-box">
+          <a
+            href="{{ result['Question Link'] }}"
+            style="display: block; text-align: center"
+          >
+            <img
+              src="/static/leetcode.svg"
+              alt=""
+              style="width: 130px; height: 130px;margin: auto;"
+            />
+          </a>
+          <h6>
+            <a href="{{ result['Question Link'] }}"
+              ><div class="card-button">
+                <span class="card-text">{{ result['Question Name'] }}</span>
+              </div></a
+            >
+          </h6>
+        </div>
+        {% endfor %}
+      </div>
+    
+    </div>
+      <!-- <div style="clear: both"></div>
+      <footer>
+        <div class="footer-content">
+          <h3>Code Quest</h3>
+          <p>Cross platform Coding Problem Search Engine</p>
+          <ul class="socials">
+            <li>
+              <a
+                href="https://www.linkedin.com/in/sandeep-goswami-90bb511b7"
+                style="padding-left: 25px"
+                ><i class="bx bxl-linkedin-square"></i
+              ></a>
+              <a
+                href="https://github.com/coding-priest7"
+                style="padding-left: 25px"
+              >
+                <i class="bx bxl-github"></i
+              ></a>
+              <a
+                href="https://codeforces.com/profile/coding_priest7"
+                style="padding-left: 25px"
+                ><i class="bx bx-code-alt"></i
+              ></a>
+              <a href="https://twitter.com/?lang=en" style="padding-left: 25px"
+                ><i class="bx bxl-twitter bx-burst"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            copyright &copy; 2023 Code Quest. Designed by
+            <span>Sandeep Goswami</span>
+          </p>
+        </div>
+      </footer> -->
+  </body>
+</html>
