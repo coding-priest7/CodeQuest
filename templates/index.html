@@ -19,50 +19,49 @@
     />
   </head>
   <body>
-    <header>
-      <a href="#" class="logo"><span>Code Quest</span></a>
-    </header>
-    <div class="container">
-      <div class="search-box">
-        <i class="bx bx-search"></i>
-        <form method="POST">
-          {{ form.hidden_tag() }}
-          <!-- <label for="search" >Key words:</label> -->
-          <!-- <span class="form-label">Key words:</span> -->
-          <input type="text" placeholder="search" name="search" />
-          </div>
-          <!-- {{ form.search() }} {{ form.submit() }} -->
-          <!-- {{ form.submit() }} -->
-        </form>
-      </div>
-
-      <div class="images">
-        {% for result in results %}
-        <div class="image-box">
-          <a
-            href="{{ result['Question Link'] }}"
-            style="display: block; text-align: center"
-          >
-            <img
-              src="/static/leetcode.svg"
-              alt=""
-              style="width: 130px; height: 130px;margin: auto;"
-            />
-          </a>
-          <h6>
-            <a href="{{ result['Question Link'] }}"
-              ><div class="card-button">
-                <span class="card-text">{{ result['Question Name'] }}</span>
-              </div></a
-            >
-          </h6>
+    <div class="parent">
+      <header>
+        <a href="#" class="logo"><span>Code Quest</span></a>
+      </header>
+      <div class="container">
+        <div class="search-box">
+          <i class="bx bx-search"></i>
+          <form method="POST">
+            {{ form.hidden_tag() }}
+            <!-- <label for="search" >Key words:</label> -->
+            <!-- <span class="form-label">Key words:</span> -->
+            <input type="text" placeholder="search" name="search" />
+            <!-- {{ form.search() }} {{ form.submit() }} -->
+            <!-- {{ form.submit() }} -->
+          </form>
         </div>
-        {% endfor %}
+
+        <div class="images">
+          {% for result in results %}
+          <div class="image-box">
+            <a
+              href="{{ result['Question Link'] }}"
+              style="display: block; text-align: center"
+            >
+              <img
+                src="/static/leetcode.svg"
+                alt=""
+                style="width: 130px; height: 130px; margin: auto"
+              />
+            </a>
+            <h6>
+              <a href="{{ result['Question Link'] }}"
+                ><div class="card-button">
+                  <span class="card-text">{{ result['Question Name'] }}</span>
+                </div></a
+              >
+            </h6>
+          </div>
+          {% endfor %}
+        </div>
       </div>
-    
-    </div>
-      <!-- <div style="clear: both"></div>
-      <footer>
+      <div style="clear: both"></div>
+      <div class="footer">
         <div class="footer-content">
           <h3>Code Quest</h3>
           <p>Cross platform Coding Problem Search Engine</p>
@@ -96,6 +95,7 @@
             <span>Sandeep Goswami</span>
           </p>
         </div>
-      </footer> -->
+      </div>
+    </div>
   </body>
 </html>
